@@ -1,0 +1,47 @@
+[
+	{
+		"id": "mcu_lfo_tab",
+		"type": "tab",
+		"label": "LFO NeoPixel",
+		"disabled": false,
+		"info": ""
+	},
+	{
+		"id": "lfo1",
+		"type": "mcu_lfo",
+		"z": "mcu_lfo_tab",
+		"name": "",
+		"waveform": "sine",
+		"frequency": 0.5,
+		"interval": 20,
+		"autostart": true,
+		"x": 200,
+		"y": 200,
+		"wires": [["scale1"]]
+	},
+	{
+		"id": "scale1",
+		"type": "function",
+		"z": "mcu_lfo_tab",
+		"name": "to brightness",
+		"func": "msg.brightness = 50 + 50 * msg.payload;\nreturn msg;",
+		"outputs": 1,
+		"x": 400,
+		"y": 200,
+		"wires": [["px1"]]
+	},
+	{
+		"id": "px1",
+		"type": "mcu_neopixels",
+		"z": "mcu_lfo_tab",
+		"pin": "21",
+		"length": "1",
+		"order": "GRB",
+		"mode": "3",
+		"foreground": "#ffffff",
+		"brightness": "100",
+		"x": 580,
+		"y": 200,
+		"wires": []
+	}
+]

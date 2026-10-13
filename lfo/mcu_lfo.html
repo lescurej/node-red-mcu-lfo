@@ -1,0 +1,76 @@
+<script type="text/javascript">
+	RED.nodes.registerType("mcu_lfo", {
+		category: "MCU",
+		color: "#a2aaff",
+		defaults: {
+			name: { value: "" },
+			waveform: { value: "sine" },
+			frequency: { value: 1, validate: RED.validators.number() },
+			interval: { value: 20, validate: RED.validators.number() },
+			autostart: { value: false }
+		},
+		inputs: 1,
+		outputs: 1,
+		icon: "font-awesome/fa-area-chart",
+		paletteLabel: "LFO",
+		label: function () {
+			return this.name || `LFO ${this.frequency}Hz`;
+		}
+	});
+</script>
+
+<script type="text/html" data-template-name="mcu_lfo">
+	<div class="form-row">
+		<label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+		<input type="text" id="node-input-name" placeholder="LFO">
+	</div>
+	<div class="form-row">
+		<label for="node-input-waveform">Waveform</label>
+		<select id="node-input-waveform" style="width:70%">
+			<option value="sine">sine</option>
+			<option value="saw">saw</option>
+			<option value="saw_i">saw inverted</option>
+			<option value="triangle">triangle</option>
+			<option value="square">square</option>
+			<option value="sig">sig</option>
+		</select>
+	</div>
+	<div class="form-row">
+		<label for="node-input-frequency">Frequency (Hz)</label>
+		<input type="number" id="node-input-frequency" min="0.01" step="0.01" style="width:70%">
+	</div>
+	<div class="form-row">
+		<label for="node-input-interval">Interval (ms)</label>
+		<input type="number" id="node-input-interval" min="1" step="1" style="width:70%">
+	</div>
+	<div class="form-row">
+		<label for="node-input-autostart">&nbsp;</label>
+		<input type="checkbox" id="node-input-autostart" style="width:auto">
+		<label for="node-input-autostart" style="width:auto"> Auto-start on boot</label>
+	</div>
+</script>
+
+<script type="text/markdown" data-help-name="mcu_lfo">
+Low-frequency oscillator for [Node-RED MCU Edition](https://github.com/phoddie/node-red-mcu).
+
+### Outputs
+: payload (number) : waveform sample, typically -1 to 1
+
+### Inputs
+: payload (number) : set frequency in Hz
+: payload (string) : `start` (default) starts output; `stop` stops the timer
+: waveform (string) : change waveform (`sine`, `saw`, `saw_i`, `triangle`, `square`, `sig`)
+
+### Configuration
+- **Auto-start**: emit samples when the flow starts without an inject message
+
+### Example (NeoPixel brightness)
+Use a **function** node after LFO:
+
+```javascript
+msg.brightness = 50 + 50 * msg.payload;
+return msg;
+```
+
+Wire to **neopixels** with `msg.brightness` (0–100).
+</script>

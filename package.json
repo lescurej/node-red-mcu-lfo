@@ -1,0 +1,47 @@
+{
+	"name": "@moddable-node-red/mcu_lfo",
+	"version": "1.0.0",
+	"description": "Low-frequency oscillator node for Node-RED MCU Edition",
+	"scripts": {
+		"test": "echo \"Error: no tests\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/johanlescure/node-red-mcu-lfo.git",
+		"directory": "."
+	},
+	"keywords": [
+		"mcu",
+		"node-red",
+		"node-red-mcu",
+		"lfo",
+		"oscillator"
+	],
+	"author": "Johan Lescure",
+	"license": "LGPL-3.0-or-later",
+	"bugs": {
+		"url": "https://github.com/johanlescure/node-red-mcu-lfo/issues"
+	},
+	"homepage": "https://github.com/johanlescure/node-red-mcu-lfo#readme",
+	"engines": {
+		"node": ">=14.0.0"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"files": [
+		"lfo/",
+		"examples/",
+		"README.md",
+		"LICENSE"
+	],
+	"peerDependencies": {
+		"@ralphwetzel/node-red-mcu-plugin": ">=1.0.0"
+	},
+	"node-red": {
+		"version": ">=3.0.0",
+		"nodes": {
+			"mcu_lfo": "lfo/mcu_lfo.js"
+		}
+	}
+}
