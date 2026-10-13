@@ -15,7 +15,7 @@ From git:
 
 ```bash
 cd ~/.node-red
-npm install github:johanlescure/node-red-mcu-lfo
+npm install github:lescurej/node-red-mcu-lfo
 ```
 
 Restart Node-RED. The node appears in the **MCU** palette as **LFO**.

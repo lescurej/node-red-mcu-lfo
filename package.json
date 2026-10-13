@@ -7,7 +7,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/johanlescure/node-red-mcu-lfo.git",
+		"url": "git+https://github.com/lescurej/node-red-mcu-lfo.git",
 		"directory": "."
 	},
 	"keywords": [
@@ -20,9 +20,9 @@
 	"author": "Johan Lescure",
 	"license": "LGPL-3.0-or-later",
 	"bugs": {
-		"url": "https://github.com/johanlescure/node-red-mcu-lfo/issues"
+		"url": "https://github.com/lescurej/node-red-mcu-lfo/issues"
 	},
-	"homepage": "https://github.com/johanlescure/node-red-mcu-lfo#readme",
+	"homepage": "https://github.com/lescurej/node-red-mcu-lfo#readme",
 	"engines": {
 		"node": ">=14.0.0"
 	},
