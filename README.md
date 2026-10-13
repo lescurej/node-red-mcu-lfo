@@ -1,4 +1,4 @@
-# @moddable-node-red/mcu_lfo
+# @lescurej/node-red-mcu-lfo
 
 LFO (low-frequency oscillator) node for [Node-RED MCU Edition](https://github.com/phoddie/node-red-mcu).
 
@@ -8,7 +8,7 @@ From npm (after publish):
 
 ```bash
 cd ~/.node-red
-npm install @moddable-node-red/mcu_lfo
+npm install @lescurej/node-red-mcu-lfo
 ```
 
 From git:

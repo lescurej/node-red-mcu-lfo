@@ -1,5 +1,5 @@
 {
-	"name": "@moddable-node-red/mcu_lfo",
+	"name": "@lescurej/node-red-mcu-lfo",
 	"version": "1.0.0",
 	"description": "Low-frequency oscillator node for Node-RED MCU Edition",
 	"scripts": {
